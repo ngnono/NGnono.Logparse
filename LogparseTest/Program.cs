@@ -15,13 +15,14 @@ namespace LogparseTest
         public int Amount { get; set; }
 
         public string Title { get; set; }
+
+        public int TemplateId { get; set; }
     }
 
     internal class EntryCollection : List<Entry>
     {
         public DateTime DateTime { get; set; }
     }
-
 
     class Program
     {
@@ -32,119 +33,156 @@ namespace LogparseTest
 
         private static List<Entry> GetTitle()
         {
-            var e = new List<Entry>();
-            e.Add(new Entry
+            var e = new List<Entry>
                 {
-                    Id = 10001,
-                    Title = "银泰网-成功下单通知"
-                });
-
-            e.Add(new Entry
-            {
-                Id = 10002,
-                Title = "欢迎加入银泰网"
-            });
-
-            e.Add(new Entry
-            {
-                Id = 10003,
-                Title = "邮箱验证"
-            });
-
-            e.Add(new Entry
-            {
-                Id = 10004,
-                Title = "订单发货成功"
-            });
-
-            e.Add(new Entry
-            {
-                Id = 10005,
-                Title = "退换货受理通知"
-            });
-
-            e.Add(new Entry
-            {
-                Id = 10006,
-                Title = "限时尊抢活动订阅邮件"
-            });
+                    new Entry
+                        {
+                            Id = 10001,
+                            Title = "银泰网-成功下单通知"
+                        },
+                    new Entry
+                        {
+                            Id = 10002,
+                            Title = "欢迎加入银泰网"
+                        },
+                    new Entry
+                        {
+                            Id = 10003,
+                            Title = "邮箱验证"
+                        },
+                    new Entry
+                        {
+                            Id = 10004,
+                            Title = "订单发货成功"
+                        },
+                    new Entry
+                        {
+                            Id = 10005,
+                            Title = "退换货受理通知"
+                        },
+                    new Entry
+                        {
+                            Id = 10006,
+                            Title = "限时尊抢活动订阅邮件"
+                        },
+                    new Entry
+                        {
+                            Id = 20001,
+                            Title = "银泰网-找回密码"
+                        },
+                    new Entry
+                        {
+                            Id = 20002,
+                            Title = "银泰网-未支付提醒"
+                        },
+                    new Entry
+                        {
+                            Id = 20003,
+                            Title = "银泰网-订单支付成功"
+                        },
+                    new Entry
+                        {
+                            Id = 20004,
+                            Title = "银泰网-成功下单通知"
+                        },
+                    new Entry
+                        {
+                            Id = 20005,
+                            Title = "银泰网-发货通知"
+                        },
+                    new Entry
+                        {
+                            Id = 20006,
+                            Title = "您已成功加入银泰网，重置密码"
+                        },
+                    new Entry
+                        {
+                            Id = 20007,
+                            Title = "银泰网-邮箱验证"
+                        },
+                    new Entry
+                        {
+                            Id = 20008,
+                            Title = "银泰网-退换货受理通知（RMA）"
+                        },
+                    new Entry
+                        {
+                            Id = 20009,
+                            Title = "银泰网-退款通知(RMA)"
+                        },
+                    new Entry
+                        {
+                            Id = 20010,
+                            Title = "您的好友邀请您加入银泰网"
+                        },
+                    new Entry
+                        {
+                            Id = 20011,
+                            Title = "银泰网-订单取消通知"
+                        },
+                    new Entry
+                        {
+                            Id = 20012,
+                            Title = "欢迎您加入银泰网（新）"
+                        },
+                    new Entry
+                        {
+                            Id = 20013,
+                            Title = "银泰网-成功订购通知"
+                        },
+                    new Entry
+                        {
+                            Id = 20014,
+                            Title = "会员升级邮件通知（新）"
+                        },
+                    new Entry
+                        {
+                            Id = 20015,
+                            Title = "银泰网-COD取消通知"
+                        },
+                    new Entry
+                        {
+                            Id = 20016,
+                            Title = "银泰网-预定到货通知"
+                        },
+                    new Entry
+                        {
+                            Id = 20017,
+                            Title = "满额返券邮件模板"
+                        },
+                    new Entry
+                        {
+                            Id = 20018,
+                            Title = "会员升级邮件通知(金卡)"
+                        },
+                    new Entry
+                        {
+                            Id = 20019,
+                            Title = "银泰网限时尊抢订阅验证"
+                        },
+                    new Entry
+                        {
+                            Id = 20020,
+                            Title = "银泰网限时尊抢退订验证"
+                        },
+                    new Entry
+                        {
+                            Id = 20021,
+                            Title = "会员升级邮件通知（白金卡）"
+                        },
+                    new Entry
+                        {
+                            Id = 20022,
+                            Title = "银泰网-修改邮箱"
+                        }
+                };
 
 
             //2qi
 
-            e.Add(new Entry
-            {
-                Id = 20001,
-                Title = "银泰网-找回密码"
-            });
-
-            e.Add(new Entry
-            {
-                Id = 20002,
-                Title = "银泰网-未支付提醒"
-            });
-
-            e.Add(new Entry
-            {
-                Id = 20003,
-                Title = "银泰网-订单支付成功"
-            });
-
-            e.Add(new Entry
-            {
-                Id = 20005,
-                Title = "银泰网-发货通知"
-            });
-
-            e.Add(new Entry
-            {
-                Id = 20006,
-                Title = "您已成功加入银泰网，重置密码"
-            });
-
-            e.Add(new Entry
-            {
-                Id = 20009,
-                Title = "银泰网-退款通知(RMA)"
-            });
-
-            e.Add(new Entry
-            {
-                Id = 20010,
-                Title = "您的好友邀请您加入银泰网"
-            });
-
-            e.Add(new Entry
-            {
-                Id = 20011,
-                Title = "银泰网-订单取消通知"
-            });
-
-            e.Add(new Entry
-            {
-                Id = 20013,
-                Title = "银泰网-成功订购通知"
-            });
-
-            e.Add(new Entry
-            {
-                Id = 20014,
-                Title = "会员升级邮件通知（新）"
-            });
 
             return e;
         }
-
-        private static Entry Create(int id, string titel)
-        {
-            return new Entry()
-                {
-                    Amount = 0,
-                    Id = id,
-                    Title = titel
-                };
-        }
-
 
         static void Main(string[] args)
         {
@@ -162,8 +200,8 @@ namespace LogparseTest
         private static void Run()
         {
             var l = new List<DateTime>();
-            var s = new DateTime(2013, 6, 3);
-            var e = new DateTime(2013, 6, 5);
+            var s = new DateTime(2013, 6, 1);
+            var e = new DateTime(2013, 6, 30);
             while (s <= e)
             {
                 l.Add(s);
@@ -191,7 +229,7 @@ namespace LogparseTest
         private static void Save(List<EntryCollection> datas)
         {
             var title1 = GetTitle();
-            var fullPath = String.Format("d:\\tongji_{0}.csv", DateTime.Now.ToString("yyyyMMddHH"));
+            var fullPath = outPath + String.Format("\\tongji_{0}.csv", DateTime.Now.ToString("yyyyMMddHH"));
             var fi = new FileInfo(fullPath);
 
             if (fi.Directory != null && !fi.Directory.Exists)
@@ -259,7 +297,15 @@ namespace LogparseTest
             {
                 string s;
 
-                using (var sr = File.OpenText(Path.Combine(path, FileName("u_ex{0}.csv", n))))
+                //判断文件是否存在
+                var p = Path.Combine(path, FileName("u_ex{0}.csv", n));
+                var f = new FileInfo(p);
+                if (!f.Exists)
+                {
+                    continue;
+                }
+
+                using (var sr = f.OpenText())
                 {
                     //放弃第一行
                     if (sr.ReadLine() != null)
@@ -284,7 +330,8 @@ namespace LogparseTest
         {
             var collec = new EntryCollection { DateTime = dt };
 
-            var list = new List<Entry>();
+            var dic = new Dictionary<int, Entry>();
+
             foreach (var line in lines)
             {
                 if (line.StartsWith("source=yt_yy_email&track=", System.StringComparison.OrdinalIgnoreCase))
@@ -298,14 +345,23 @@ namespace LogparseTest
                     if (!String.IsNullOrEmpty(ppos))
                     {
                         var id = ppos.Split(new[] { '=' })[1];
-                        var entry = new Entry { Id = Int32.Parse(id.Trim()), Amount = Int32.Parse(t[1]) };
+                        var i = Int32.Parse(id.Trim());
+                        var entry = new Entry { Id = i, Amount = Int32.Parse(t[1]) };
 
-                        list.Add(entry);
+                        if (dic.ContainsKey(i))
+                        {
+                            dic[i].Amount += entry.Amount;
+                        }
+                        else
+                        {
+                            dic.Add(i, entry);
+                        }
+
                     }
                 }
             }
 
-            collec.AddRange(list);
+            collec.AddRange(dic.Values);
 
             return collec;
         }
