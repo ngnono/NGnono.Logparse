@@ -200,8 +200,8 @@ namespace LogparseTest
         private static void Run()
         {
             var l = new List<DateTime>();
-            var s = new DateTime(2013, 6, 1);
-            var e = new DateTime(2013, 6, 30);
+            var s = new DateTime(2013, 10, 1);
+            var e = new DateTime(2013, 11, 30);
             while (s <= e)
             {
                 l.Add(s);
@@ -345,7 +345,13 @@ namespace LogparseTest
                     if (!String.IsNullOrEmpty(ppos))
                     {
                         var id = ppos.Split(new[] { '=' })[1];
-                        var i = Int32.Parse(id.Trim());
+                        int tmpInt;
+                        if (!Int32.TryParse(id.Trim(), out tmpInt))
+                        {
+                            continue;
+                        }
+
+                        var i = tmpInt;
                         var entry = new Entry { Id = i, Amount = Int32.Parse(t[1]) };
 
                         if (dic.ContainsKey(i))
